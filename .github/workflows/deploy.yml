@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages  # Nom de votre workflow
+
+on:  # Définit quand le workflow doit s'exécuter
+  push:  # Se déclenche lors d'un push
+    branches: [ "main" ]  # Seulement sur la branche main
+    paths:  # Seulement si ces fichiers sont modifiés
+      - 'index.html'  # Ne se déclenche que si index.html change
+
+jobs:  # Liste des jobs à exécuter
+  deploy:  # Notre job de déploiement
+    runs-on: ubuntu-latest  # Environnement d'exécution
+
+    steps:  # Étapes du job
+      # Étape 1: Récupère le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v3  # Action officielle pour récupérer le code
+
+      # Étape 2: Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v3  # Action pour configurer Pages
+
+      # Étape 3: Upload les artefacts (nos fichiers)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1  # Action pour préparer le déploiement
+        with:
+          path: '.'  # Prend tout le contenu du dossier racine
+
+      # Étape 4: Déploie sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2  # Action finale de déploiement
