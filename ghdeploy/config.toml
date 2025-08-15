@@ -7,3 +7,12 @@ theme = "ananke"
   description = "Un site généré avec Hugo et le thème Ananke"
   favicon = "favicon.ico"
   author = "Arnaud"
+  
+[params]
+  themeColor = "#FF0000"  # Rouge (exemple)
+
+  
+[params]
+  disqusShortname = "votre-compte-disqus"
+
+  
