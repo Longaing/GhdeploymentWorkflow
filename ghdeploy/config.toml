@@ -1,1 +1,9 @@
-theme = 'ananke'
+baseURL = "https://votre-username.github.io/nom-du-depot/"  # Adaptez à votre URL GitHub Pages
+title = "Mon Super Site Hugo"
+theme = "ananke"
+
+# Paramètres du thème Ananke (optionnels mais recommandés)
+[params]
+  description = "Un site généré avec Hugo et le thème Ananke"
+  favicon = "favicon.ico"
+  author = "Arnaud"
