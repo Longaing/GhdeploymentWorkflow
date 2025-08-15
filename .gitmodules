@@ -1,0 +1,3 @@
+[submodule "ghdeploy/themes/ananke"]
+	path = ghdeploy/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
